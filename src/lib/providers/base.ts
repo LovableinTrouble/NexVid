@@ -66,10 +66,13 @@ export abstract class BaseProvider {
   abstract getTVSources(media: ProviderMediaObject): Promise<ProviderResult>;
 
   protected createProxyUrl(url: string, headers?: Record<string, string>): string {
-    // In our app, we use /api/hls-proxy or similar if needed.
-    // For now, return the URL as is, or wrap it in a proxy if the provider needs it.
-    // The VideoPlayer component handles hls-proxy for HLS streams.
-    return url;
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.API_URL || '';
+    if (!apiUrl) return url;
+    const encoded = encodeURIComponent(url);
+    const h = headers && Object.keys(headers).length > 0
+      ? `&headers=${encodeURIComponent(JSON.stringify(headers))}`
+      : '';
+    return `${apiUrl}/api/proxy?url=${encoded}${h}`;
   }
 
   // Edge-compatible fetch helpers
