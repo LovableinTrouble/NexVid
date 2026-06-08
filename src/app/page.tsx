@@ -10,7 +10,7 @@ import { toTmdbMediaType } from '@/lib/mediaType';
 import { getPopular, getTopRated, getTrending, getTitleLogoSvgPath } from '@/lib/tmdb';
 import type { MediaItem } from '@/types';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 export const revalidate = 3600; // Revalidate every hour
 
 export default async function HomePage() {
