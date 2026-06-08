@@ -21,7 +21,7 @@ import Head from 'next/head';
 import { useParams, useRouter, useSearchParams } from 'next/navigation';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 const EMPTY_SEGMENTS: MediaSegments = {
   intro: [],
