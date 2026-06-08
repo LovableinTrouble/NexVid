@@ -5,7 +5,7 @@ import { tmdbImage } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 const SITE_URL = (process.env.APP_BASE_URL || 'https://nexvid.online').replace(/\/$/, '');
 
 type PageProps = {
