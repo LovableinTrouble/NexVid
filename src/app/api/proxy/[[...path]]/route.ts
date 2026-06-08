@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { LIMITS, VALID_USERNAME_REGEX } from '@/lib/validation';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 const WORKER_URL = (process.env.API_URL || 'https://nexvid-proxy.piotrunius.workers.dev').replace(
   /\/+$/,
