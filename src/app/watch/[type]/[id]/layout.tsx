@@ -2,7 +2,7 @@ import { getMovieDetails, getShowDetails } from '@/lib/tmdb';
 import { tmdbImage } from '@/lib/utils';
 import type { Metadata } from 'next';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 const SITE_URL = (process.env.APP_BASE_URL || 'https://nexvid.online').replace(/\/$/, '');
 
 type LayoutProps = {
