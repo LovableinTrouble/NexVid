@@ -65,7 +65,7 @@ export function Footer() {
                       </linearGradient>
                     </defs>
                     <rect x="0" y="0" width="24" height="24" rx="7" fill="url(#footer-accent)" />
-                    <polygon points="10,7.5 16,12 10,16.5" fill="white" />
+                    <path d="M15 6.5A6.5 6.5 0 0 1 9 17.5a6.5 6.5 0 1 0 6-11z" fill="white" />
                   </svg>
                 )}
               </div>
