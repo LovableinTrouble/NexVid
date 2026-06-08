@@ -57,11 +57,10 @@ export class PobreflixProvider extends BaseProvider {
     for (const url of urls) {
       try {
         console.log(`[Pobreflix] Probing ${url}`);
-        const PROXY_BASE = process.env.API_URL || '';
-const proxiedUrl = PROXY_BASE
-  ? `${PROXY_BASE}/proxy?url=${encodeURIComponent(url)}`
+const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.API_URL || '';
+const proxiedUrl = apiUrl
+  ? `${apiUrl}/api/proxy?url=${encodeURIComponent(url)}`
   : url;
-
 const response = await fetch(proxiedUrl, {
   headers: DEFAULT_HEADERS,
   signal: AbortSignal.timeout(10000),
