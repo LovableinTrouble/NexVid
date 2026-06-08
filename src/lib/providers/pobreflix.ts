@@ -1,7 +1,7 @@
 import type { ProviderCapabilities, ProviderMediaObject, ProviderResult, Source } from './base';
 import { BaseProvider } from './base';
 
-const BASE_URL = 'https://pobreflix.codes';
+const BASE_URL = 'https://pobreflix.army';
 const XPASS_BASE = 'https://play.xpass.top';
 
 const DEFAULT_HEADERS = {
