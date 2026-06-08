@@ -18,9 +18,9 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 const SITE_URL = (process.env.APP_BASE_URL || 'https://nexvid.online').replace(/\/$/, '');
 
-const SITE_NAME = 'NexVid';
+const SITE_NAME = 'SLEEPY'
 const SITE_DESCRIPTION =
-  'Watch trending movies and TV shows online in one fast, modern streaming hub with smart search, watchlists, and seamless playback.';
+  'best movie site rn';
 
 export const viewport: Viewport = {
   themeColor: '#000000',
