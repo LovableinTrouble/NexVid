@@ -90,10 +90,10 @@ export function isRequestFromAllowedSite(request: NextRequest): boolean {
     return false;
   }
 
-  const secFetchSite = (request.headers.get('sec-fetch-site') || '').toLowerCase();
-  if (secFetchSite && secFetchSite !== 'same-origin' && secFetchSite !== 'same-site') {
-    return false;
-  }
+ const secFetchSite = (request.headers.get('sec-fetch-site') || '').toLowerCase();
+if (secFetchSite && secFetchSite !== 'same-origin' && secFetchSite !== 'same-site' && secFetchSite !== 'cross-site') {
+  return false;
+}
 
   return true;
 }
