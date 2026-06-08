@@ -7,7 +7,7 @@ type PageProps = {
   params: Promise<{ type: string; id: string }>;
 };
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 export default async function WatchPage({ params }: PageProps) {
   const { type, id } = await params;
