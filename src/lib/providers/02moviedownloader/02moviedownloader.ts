@@ -77,10 +77,15 @@ export class MovieDownloader extends BaseProvider {
       'sec-gpc': '1',
     };
 
-    const req = await fetch(this.BASE_URL + '/api/verify-robot', {
-      method: 'POST',
-      headers,
-    });
+const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.API_URL || '';
+const tokenUrl = this.BASE_URL + '/api/verify-robot';
+const proxiedTokenUrl = apiUrl
+  ? `${apiUrl}/api/proxy?url=${encodeURIComponent(tokenUrl)}`
+  : tokenUrl;
+const req = await fetch(proxiedTokenUrl, {
+  method: 'POST',
+  headers,
+});
 
     const resp = (await req.json()) as Token;
     if (resp.token) {
@@ -259,8 +264,12 @@ export class MovieDownloader extends BaseProvider {
           ? '/movie/' + media.tmdbId
           : '/tv/' + media.tmdbId + media.s + media.e);
 
-      const response = await fetch(url, {
-        headers: {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || process.env.API_URL || '';
+const proxiedUrl = apiUrl
+  ? `${apiUrl}/api/proxy?url=${encodeURIComponent(url)}`
+  : url;
+const response = await fetch(proxiedUrl, {
+  headers: {
           ...this.HEADERS,
           accept: 'application/json',
           'x-session-token': token,
