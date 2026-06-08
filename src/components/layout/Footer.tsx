@@ -69,7 +69,7 @@ export function Footer() {
                   </svg>
                 )}
               </div>
-              <span className="text-[14px] font-semibold tracking-tight text-white">NexVid</span>
+              <span className="text-[14px] font-semibold tracking-tight text-white">SLEEPY</span>
             </div>
             <span className="hidden text-white/10 md:inline">·</span>
             <p className="hidden text-[12px] text-white/25 md:inline">
@@ -131,7 +131,7 @@ export function Footer() {
       {/* ── Bottom Bar ── */}
       <div className="w-full border-t border-white/[0.04]">
         <div className="flex w-full flex-col-reverse items-center justify-center gap-2 px-6 py-5 sm:flex-row sm:justify-between sm:px-8 lg:px-12 xl:px-16">
-          <p className="text-[11px] text-white/15">© {year} NexVid · All rights reserved.</p>
+          <p className="text-[11px] text-white/15">© {year} SLEEPY ·.</p>
           {isClient && (
             <p className="flex items-center gap-1 text-[10px] text-white/10">
               <span>Updated {lastUpdated}</span>
