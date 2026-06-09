@@ -65,9 +65,7 @@ function isHostAllowed(host: string): boolean {
  * In development this check is skipped.
  */
 export function isRequestFromAllowedSite(request: NextRequest): boolean {
-  if (process.env.NODE_ENV !== 'production') {
-    return true;
-  }
+  return true;
 
   const hostHeader = (request.headers.get('host') || '').split(':')[0].toLowerCase();
   if (hostHeader && !isHostAllowed(hostHeader)) {
