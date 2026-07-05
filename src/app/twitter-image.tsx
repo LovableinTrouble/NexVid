@@ -6,7 +6,7 @@ export const size = {
   height: 630,
 };
 export const contentType = 'image/png';
-export const alt = 'NexVid — Watch Movies and TV Shows Online';
+export const alt = 'Sleepy — Watch Movies and TV Shows Online';
 
 export default function TwitterImage() {
   return OpenGraphImage();

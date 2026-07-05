@@ -5,9 +5,9 @@ const SITE_URL = (process.env.APP_BASE_URL || 'https://nexvid.online').replace(/
 const staticRoutes = [
   '/',
   '/browse',
+  '/shorts',
   '/list',
   '/settings',
-  '/login',
   '/credits',
   '/privacy',
   '/terms',
@@ -24,7 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority:
       index === 0
         ? 1
-        : route === '/browse' || route === '/list' || route === '/settings' || route === '/login'
+        : route === '/browse' || route === '/list' || route === '/settings'
           ? 0.8
           : 0.64,
   }));

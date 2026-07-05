@@ -302,7 +302,7 @@ export default function SettingsPage() {
       }
       if (cloudError) toast(`Local data cleared. ${cloudError}`, 'info');
       else toast('All local and cloud data has been deleted', 'info');
-      window.location.href = '/login';
+      window.location.href = '/';
     } catch (error: any) {
       toast(error?.message || 'Failed to clear all data', 'error');
     }

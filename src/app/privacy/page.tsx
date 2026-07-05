@@ -2,7 +2,7 @@
    Privacy Policy
    ============================================ */
 
-export const metadata = { title: 'Privacy Policy - NexVid' };
+export const metadata = { title: 'Privacy Policy - Sleepy' };
 
 const DISCORD_INVITE_URL = process.env.NEXT_PUBLIC_DISCORD_URL;
 
@@ -18,7 +18,7 @@ export default function PrivacyPage() {
         <section>
           <h2 className="mb-2 text-[15px] font-semibold text-text-primary">1. Overview</h2>
           <p>
-            NexVid is designed to work primarily with data stored locally in your browser. If
+            Sleepy is designed to work primarily with data stored locally in your browser. If
             backend login/cloud sync is enabled for this deployment, selected account data is also
             processed by the configured backend API.
           </p>
@@ -26,7 +26,7 @@ export default function PrivacyPage() {
 
         <section className="mt-8">
           <p className="text-[13px] text-text-muted">
-            © {new Date().getFullYear()} NexVid · All rights reserved.
+            © {new Date().getFullYear()} Sleepy · All rights reserved.
           </p>
         </section>
 
@@ -77,7 +77,7 @@ export default function PrivacyPage() {
           <h2 className="mb-2 text-[15px] font-semibold text-text-primary">
             4. Third-Party Services
           </h2>
-          <p>NexVid may connect to external services needed to render content and metadata:</p>
+          <p>Sleepy may connect to external services needed to render content and metadata:</p>
           <ul className="mt-2 list-inside list-disc space-y-1 text-text-muted">
             <li>
               <strong>TMDB API</strong> &mdash; movie/show metadata, posters, and search data
@@ -111,7 +111,7 @@ export default function PrivacyPage() {
             5. Cookies and Local Storage
           </h2>
           <p>
-            NexVid uses technically necessary client-side storage (like{' '}
+            Sleepy uses technically necessary client-side storage (like{' '}
             <code className="text-accent">localStorage</code>) for user interface preferences and
             session authentication. We do not use advertising or tracking cookies.
           </p>

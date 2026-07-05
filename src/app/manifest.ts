@@ -2,8 +2,8 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'NexVid — Watch Movies & TV Shows Online',
-    short_name: 'NexVid',
+    name: 'Sleepy — Watch Movies & TV Shows Online',
+    short_name: 'Sleepy',
     description:
       'Watch trending movies and TV shows online in one fast, modern streaming hub with smart search, watchlists, and seamless playback.',
     start_url: '/',

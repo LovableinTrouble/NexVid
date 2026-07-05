@@ -675,6 +675,17 @@ export async function getNowPlaying(type: 'movie' | 'tv', page = 1): Promise<Med
   return data.results.map((r: any) => (type === 'movie' ? transformMovie(r) : transformShow(r)));
 }
 
+export async function getVideos(type: 'movie' | 'tv', id: string): Promise<VideoItem[]> {
+  const data = await tmdbFetch<{ results?: TmdbRawVideo[] }>(`/${type}/${id}/videos`);
+  return (data.results || []).map((v) => ({
+    id: v.id,
+    key: v.key,
+    name: v.name,
+    site: v.site,
+    type: v.type,
+  }));
+}
+
 export async function getExternalIds(
   type: 'movie' | 'tv',
   id: string,

@@ -122,7 +122,7 @@ export function Navbar() {
 
   const searchRef = useRef<HTMLInputElement>(null);
   const dockRef = useRef<HTMLElement>(null);
-  const { user, isLoggedIn, logout } = useAuthStore();
+  const { user, isLoggedIn } = useAuthStore();
   const { isBlocked } = useBlockedContentStore();
   const { glassEffect, groqApiKey } = useSettingsStore((s) => s.settings);
 
@@ -310,6 +310,26 @@ export function Navbar() {
           <rect x="14" y="3" width="7" height="7" rx="1" />
           <rect x="14" y="14" width="7" height="7" rx="1" />
           <rect x="3" y="14" width="7" height="7" rx="1" />
+        </svg>
+      ),
+    },
+    {
+      href: '/shorts',
+      id: 'shorts',
+      label: 'Shorts',
+      icon: (
+        <svg
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <rect x="7" y="2" width="10" height="20" rx="2.5" />
+          <path d="m10.5 9.5 4 2.5-4 2.5z" />
         </svg>
       ),
     },
@@ -761,56 +781,6 @@ export function Navbar() {
             </>
           )}
 
-          {/* Divider */}
-          <div className="mx-1 h-8 w-px bg-white/[0.08]" />
-
-          {/* Auth Button */}
-          {isLoggedIn ? (
-            <button
-              onClick={() => logout()}
-              className="flex h-9 w-9 items-center justify-center rounded-full bg-red-500/10 text-red-400 transition-all duration-500 hover:scale-110 hover:bg-red-500/20 sm:h-11 sm:w-11"
-              aria-label="Log Out"
-            >
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
-                <polyline points="16 17 21 12 16 7" />
-                <line x1="21" y1="12" x2="9" y2="12" />
-              </svg>
-            </button>
-          ) : (
-            <Link
-              href="/login"
-              className="hover:bg-accent/20 flex shrink-0 items-center justify-center gap-1.5 whitespace-nowrap rounded-full border border-accent-glow bg-accent-muted px-3 py-2 text-[11px] font-black uppercase tracking-wider text-accent transition-all sm:px-4 sm:py-2"
-              aria-label="Sign In"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="sm:mr-0.5"
-                aria-hidden="true"
-              >
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
-              <span className="hidden sm:inline">Sign In</span>
-            </Link>
-          )}
         </div>
       </nav>
     </>

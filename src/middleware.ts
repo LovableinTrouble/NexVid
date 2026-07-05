@@ -44,7 +44,7 @@ export async function middleware(request: NextRequest) {
 
     if (!token) {
       const loginUrl = request.nextUrl.clone();
-      loginUrl.pathname = '/login';
+      loginUrl.pathname = '/';
       return applySecurityHeaders(NextResponse.redirect(loginUrl));
     }
 
@@ -53,7 +53,7 @@ export async function middleware(request: NextRequest) {
 
     if (!isValid) {
       const loginUrl = request.nextUrl.clone();
-      loginUrl.pathname = '/login';
+      loginUrl.pathname = '/';
       const response = applySecurityHeaders(NextResponse.redirect(loginUrl));
       response.cookies.delete('nexvid_session'); // Removing the forged cookie
       return response;
