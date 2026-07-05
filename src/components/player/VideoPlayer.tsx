@@ -1,5 +1,5 @@
 /* ============================================
-  NexVid Video Player
+  Sleepy Video Player
    Full-featured player with HLS.js, playback
    speed, PiP, captions, quality selection,
    timeline segments (TIDB), etc.

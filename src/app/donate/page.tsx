@@ -99,10 +99,10 @@ export default function DonatePage() {
           </div>
 
           <h1 className="text-[34px] font-bold leading-tight tracking-tight text-text-primary sm:text-[42px]">
-            Support NexVid
+            Support Sleepy
           </h1>
           <p className="mx-auto mt-3 max-w-lg text-[15px] leading-relaxed text-text-secondary">
-            NexVid is free and open for everyone. Your donation helps us keep the servers running
+            Sleepy is free and open for everyone. Your donation helps us keep the servers running
             and build new features.
           </p>
         </header>

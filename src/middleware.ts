@@ -43,18 +43,18 @@ export async function middleware(request: NextRequest) {
     const token = request.cookies.get('nexvid_session')?.value;
 
     if (!token) {
-      const loginUrl = request.nextUrl.clone();
-      loginUrl.pathname = '/login';
-      return applySecurityHeaders(NextResponse.redirect(loginUrl));
+      const homeUrl = request.nextUrl.clone();
+      homeUrl.pathname = '/';
+      return applySecurityHeaders(NextResponse.redirect(homeUrl));
     }
 
     // Validation of token correctness through contact with Worker
     const isValid = await isValidCloudSession(request, token);
 
     if (!isValid) {
-      const loginUrl = request.nextUrl.clone();
-      loginUrl.pathname = '/login';
-      const response = applySecurityHeaders(NextResponse.redirect(loginUrl));
+      const homeUrl = request.nextUrl.clone();
+      homeUrl.pathname = '/';
+      const response = applySecurityHeaders(NextResponse.redirect(homeUrl));
       response.cookies.delete('nexvid_session'); // Removing the forged cookie
       return response;
     }

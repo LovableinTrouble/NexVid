@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 function normalizeBaseUrl(input: string): string | null {
@@ -42,7 +42,7 @@ export async function GET(request: NextRequest) {
         cache: 'no-store',
         headers: {
           Accept: 'application/json,text/plain,*/*',
-          'User-Agent': 'NexVid-Proxy-Tester/1.0',
+          'User-Agent': 'Sleepy-Proxy-Tester/1.0',
         },
       });
 

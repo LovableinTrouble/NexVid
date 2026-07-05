@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { configure, searchSubtitles } from 'wyzie-lib';
 
 // Edge Runtime is required for Cloudflare Pages
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 // Use the latest stable domain

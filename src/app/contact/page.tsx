@@ -315,7 +315,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <Link href="/login" className="btn-accent mt-8 inline-flex items-center gap-2">
+            <Link href="/" className="btn-accent mt-8 inline-flex items-center gap-2">
               Go to login
               <svg
                 width="14"

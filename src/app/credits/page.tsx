@@ -2,7 +2,7 @@
    Credits & Acknowledgments
    ============================================ */
 
-export const metadata = { title: 'Credits - NexVid' };
+export const metadata = { title: 'Credits - Sleepy' };
 
 const SECTIONS = [
   {
@@ -63,7 +63,7 @@ export default function CreditsPage() {
       <header className="mb-12 text-center">
         <h1 className="text-[32px] font-bold tracking-tight text-text-primary">Credits</h1>
         <p className="mx-auto mt-3 max-w-md text-[14px] leading-relaxed text-text-muted">
-          NexVid is built with gratitude towards these creators, providers, and open-source
+          Sleepy is built with gratitude towards these creators, providers, and open-source
           projects.
         </p>
       </header>

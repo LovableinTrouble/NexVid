@@ -5,7 +5,7 @@ import { tmdbImage } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 const SITE_URL = (process.env.APP_BASE_URL || 'https://nexvid.online').replace(/\/$/, '');
 
 type PageProps = {
@@ -26,10 +26,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   try {
     const movie = await getMovieDetails(id);
     const releaseSuffix = movie.releaseYear ? ` (${movie.releaseYear})` : '';
-    const title = `Watch - ${movie.title}${releaseSuffix} for free on NexVid`;
+    const title = `Watch - ${movie.title}${releaseSuffix} for free on Sleepy`;
     const description = (
       movie.overview ||
-      `Watch ${movie.title} online for free on NexVid. See cast, details, and recommendations.`
+      `Watch ${movie.title} online for free on Sleepy. See cast, details, and recommendations.`
     ).slice(0, 160);
     const imagePath = movie.backdropPath || movie.posterPath;
     const imageUrl = imagePath ? tmdbImage(imagePath, 'w1280') : `${SITE_URL}/opengraph-image`;
@@ -73,8 +73,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   } catch {
     return {
-      title: 'Watch Movies for free on NexVid',
-      description: 'Watch movie details, cast, and recommendations on NexVid.',
+      title: 'Watch Movies for free on Sleepy',
+      description: 'Watch movie details, cast, and recommendations on Sleepy.',
       robots: {
         index: false,
         follow: true,
@@ -88,8 +88,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         canonical: `/movie/${id}`,
       },
       openGraph: {
-        title: 'Watch Movies for free on NexVid',
-        description: 'Watch movie details, cast, and recommendations on NexVid.',
+        title: 'Watch Movies for free on Sleepy',
+        description: 'Watch movie details, cast, and recommendations on Sleepy.',
         url: `${SITE_URL}/movie/${id}`,
         type: 'video.movie',
         images: [
@@ -97,15 +97,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             url: `${SITE_URL}/opengraph-image`,
             width: 1200,
             height: 630,
-            alt: 'NexVid',
+            alt: 'Sleepy',
             type: 'image/png',
           },
         ],
       },
       twitter: {
         card: 'summary_large_image',
-        title: 'Watch Movies for free on NexVid',
-        description: 'Watch movie details, cast, and recommendations on NexVid.',
+        title: 'Watch Movies for free on Sleepy',
+        description: 'Watch movie details, cast, and recommendations on Sleepy.',
         images: [`${SITE_URL}/opengraph-image`],
       },
     };

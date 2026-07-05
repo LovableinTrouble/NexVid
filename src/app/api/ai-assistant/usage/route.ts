@@ -1,7 +1,7 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { isValidCloudSession } from '@/lib/auth-server';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 export async function GET(request: NextRequest) {
   const isAuthorized = await isValidCloudSession(request);

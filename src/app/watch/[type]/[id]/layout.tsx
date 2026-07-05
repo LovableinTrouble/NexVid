@@ -2,7 +2,7 @@ import { getMovieDetails, getShowDetails } from '@/lib/tmdb';
 import { tmdbImage } from '@/lib/utils';
 import type { Metadata } from 'next';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 const SITE_URL = (process.env.APP_BASE_URL || 'https://nexvid.online').replace(/\/$/, '');
 
 type LayoutProps = {
@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
     const media = isShow ? await getShowDetails(id) : await getMovieDetails(id);
     const releaseSuffix = media.releaseYear ? ` (${media.releaseYear})` : '';
     const baseTitle = `${media.title}${releaseSuffix}`;
-    const title = `Watch - ${baseTitle} for free on NexVid`;
-    const description = (media.overview || `Watch ${media.title} online for free on NexVid.`).slice(
+    const title = `Watch - ${baseTitle} for free on Sleepy`;
+    const description = (media.overview || `Watch ${media.title} online for free on Sleepy.`).slice(
       0,
       160,
     );
@@ -65,10 +65,10 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
     };
   } catch {
     const fallbackTitle = isShow
-      ? 'Watch TV Episode for free on NexVid'
-      : 'Watch Movie for free on NexVid';
+      ? 'Watch TV Episode for free on Sleepy'
+      : 'Watch Movie for free on Sleepy';
     const fallbackCanonical = isShow ? `/watch/show/${id}` : `/watch/movie/${id}`;
-    const fallbackDescription = 'Watch movies and TV shows online for free on NexVid.';
+    const fallbackDescription = 'Watch movies and TV shows online for free on Sleepy.';
 
     return {
       title: fallbackTitle,
@@ -86,7 +86,7 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
             url: `${SITE_URL}/opengraph-image`,
             width: 1200,
             height: 630,
-            alt: 'NexVid',
+            alt: 'Sleepy',
             type: 'image/png',
           },
         ],

@@ -15,8 +15,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { PobreflixProvider } from '@/lib/providers/pobreflix';
 import { MovieDownloader } from '@/lib/providers/02moviedownloader/02moviedownloader';
 
-// Edge runtime is required for Cloudflare Pages
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 
 function normalizeType(
   rawType: string | null,

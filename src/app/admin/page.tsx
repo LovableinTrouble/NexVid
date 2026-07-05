@@ -529,7 +529,7 @@ export default function AdminPage() {
       const result = await clearAllActiveSessions();
       toast(`Cleared ${result.clearedCount} active sessions`, 'success');
       logout();
-      window.location.href = '/login';
+      window.location.href = '/';
     } catch (error: any) {
       toast(error?.message || 'Failed to clear active sessions', 'error');
     } finally {
@@ -556,7 +556,7 @@ export default function AdminPage() {
 
       if (result.user.id === user?.id) {
         logout();
-        window.location.href = '/login';
+        window.location.href = '/';
         return;
       }
 
@@ -979,7 +979,7 @@ export default function AdminPage() {
               </span>
             </div>
             <p className="mt-1 max-w-xl text-[13px] text-text-muted">
-              System overview and administrative controls for NexVid infrastructure.
+              System overview and administrative controls for Sleepy infrastructure.
             </p>
           </div>
           <div className="flex items-center gap-3">

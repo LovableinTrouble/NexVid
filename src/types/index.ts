@@ -1,5 +1,5 @@
 /* ============================================
-  NexVid Type Definitions
+  Sleepy Type Definitions
   ============================================ */
 
 // ---- Media Types ----

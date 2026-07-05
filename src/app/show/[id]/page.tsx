@@ -5,7 +5,7 @@ import { tmdbImage } from '@/lib/utils';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 const SITE_URL = (process.env.APP_BASE_URL || 'https://nexvid.online').replace(/\/$/, '');
 
 type PageProps = {
@@ -26,10 +26,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   try {
     const show = await getShowDetails(id);
     const releaseSuffix = show.releaseYear ? ` (${show.releaseYear})` : '';
-    const title = `Watch - ${show.title}${releaseSuffix} for free on NexVid`;
+    const title = `Watch - ${show.title}${releaseSuffix} for free on Sleepy`;
     const description = (
       show.overview ||
-      `Watch ${show.title} online for free on NexVid. Explore episodes, cast, and recommendations.`
+      `Watch ${show.title} online for free on Sleepy. Explore episodes, cast, and recommendations.`
     ).slice(0, 160);
     const imagePath = show.backdropPath || show.posterPath;
     const imageUrl = imagePath ? tmdbImage(imagePath, 'w1280') : `${SITE_URL}/opengraph-image`;
@@ -73,8 +73,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     };
   } catch {
     return {
-      title: 'Watch TV Shows for free on NexVid',
-      description: 'Watch show details, episodes, cast, and recommendations on NexVid.',
+      title: 'Watch TV Shows for free on Sleepy',
+      description: 'Watch show details, episodes, cast, and recommendations on Sleepy.',
       robots: {
         index: false,
         follow: true,
@@ -88,8 +88,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         canonical: `/show/${id}`,
       },
       openGraph: {
-        title: 'Watch TV Shows for free on NexVid',
-        description: 'Watch show details, episodes, cast, and recommendations on NexVid.',
+        title: 'Watch TV Shows for free on Sleepy',
+        description: 'Watch show details, episodes, cast, and recommendations on Sleepy.',
         url: `${SITE_URL}/show/${id}`,
         type: 'video.tv_show',
         images: [
@@ -97,15 +97,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
             url: `${SITE_URL}/opengraph-image`,
             width: 1200,
             height: 630,
-            alt: 'NexVid',
+            alt: 'Sleepy',
             type: 'image/png',
           },
         ],
       },
       twitter: {
         card: 'summary_large_image',
-        title: 'Watch TV Shows for free on NexVid',
-        description: 'Watch show details, episodes, cast, and recommendations on NexVid.',
+        title: 'Watch TV Shows for free on Sleepy',
+        description: 'Watch show details, episodes, cast, and recommendations on Sleepy.',
         images: [`${SITE_URL}/opengraph-image`],
       },
     };

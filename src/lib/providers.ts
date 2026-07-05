@@ -292,7 +292,7 @@ async function scrapeSource(
           if (options.startAt && options.startAt > 0) {
             url.searchParams.set('startAt', Math.floor(options.startAt).toString());
           }
-          // UI Toggles - Hide internal UI to use NexVid's overlay
+          // UI Toggles - Hide internal UI to use Sleepy's overlay
           url.searchParams.set('pip', 'hide');
           url.searchParams.set('cast', 'hide');
 

@@ -7,7 +7,7 @@ const staticRoutes = [
   '/browse',
   '/list',
   '/settings',
-  '/login',
+  '/shorts',
   '/credits',
   '/privacy',
   '/terms',
@@ -24,7 +24,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority:
       index === 0
         ? 1
-        : route === '/browse' || route === '/list' || route === '/settings' || route === '/login'
+        : route === '/browse' || route === '/list' || route === '/settings' || route === '/shorts'
           ? 0.8
           : 0.64,
   }));

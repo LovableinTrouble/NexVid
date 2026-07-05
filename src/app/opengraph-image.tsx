@@ -1,12 +1,12 @@
 import { ImageResponse } from 'next/og';
 
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 export const size = {
   width: 1200,
   height: 630,
 };
 export const contentType = 'image/png';
-export const alt = 'NexVid — Watch Movies and TV Shows Online';
+export const alt = 'Sleepy — Watch Movies and TV Shows Online';
 
 export default function OpenGraphImage() {
   return new ImageResponse(
@@ -77,7 +77,7 @@ export default function OpenGraphImage() {
             <rect x="6" y="6" width="52" height="52" rx="14" fill="url(#g)" />
             <path d="M24 18L46 32L24 46V18Z" fill="white" />
           </svg>
-          <div style={{ fontSize: 42, fontWeight: 700, letterSpacing: -1.2 }}>NexVid</div>
+          <div style={{ fontSize: 42, fontWeight: 700, letterSpacing: -1.2 }}>Sleepy</div>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
@@ -110,7 +110,7 @@ export default function OpenGraphImage() {
               maxWidth: '88%',
             }}
           >
-            Trending picks, smart search, watchlists, and seamless streaming on NexVid.
+            Trending picks, smart search, watchlists, and seamless streaming on Sleepy.
           </div>
         </div>
 

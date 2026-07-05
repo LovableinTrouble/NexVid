@@ -18,7 +18,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 const SITE_URL = (process.env.APP_BASE_URL || 'https://nexvid.online').replace(/\/$/, '');
 
-const SITE_NAME = 'NexVid';
+const SITE_NAME = 'Sleepy';
 const SITE_DESCRIPTION =
   'Watch trending movies and TV shows online in one fast, modern streaming hub with smart search, watchlists, and seamless playback.';
 
@@ -29,8 +29,8 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'NexVid — Watch Movies and TV Shows Online Streaming',
-    template: '%s | NexVid',
+    default: 'Sleepy — Watch Movies and TV Shows Online Streaming',
+    template: '%s | Sleepy',
   },
   description: SITE_DESCRIPTION,
   applicationName: SITE_NAME,
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
-  keywords: ['movies', 'tv shows', 'streaming', 'watch online', 'nexvid'],
+  keywords: ['movies', 'tv shows', 'streaming', 'watch online', 'sleepy'],
   alternates: {
     canonical: '/',
   },
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'NexVid — Watch Movies and TV Shows Online Streaming',
+    title: 'Sleepy — Watch Movies and TV Shows Online Streaming',
     description: SITE_DESCRIPTION,
     siteName: SITE_NAME,
     type: 'website',
@@ -67,7 +67,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'NexVid — Watch Movies and TV Shows Online Streaming',
+    title: 'Sleepy — Watch Movies and TV Shows Online Streaming',
     description: SITE_DESCRIPTION,
   },
   icons: {
